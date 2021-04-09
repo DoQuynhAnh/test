@@ -1,0 +1,216 @@
+{
+  "products": [
+    {
+      "id": "dsds909333ksvhjlsfjvhfvd4",
+      "name": "Gia hạn Youtube Premium",
+      "Description": "Khách hàng cần kích hoạt sản phẩm ngay sau khi mua hàng. Link invite chỉ có thể sử dụng trong vòng 6 tiếng. Chỉ hỗ trợ kích hoạt tài khoản Google tại Việt Nam, để kiểm tra bạn có thể xem hướng dẫn tại ĐÂY. Sản phẩm không cộng dồn, ví dụ bạn mua 2 gói 6 tháng không được cộng dồn thành 12 tháng. Thời gian tài khoản được  nâng cấp lên Premium: 24h kể từ khi mua hàng",
+      "price": "13.000",
+      "status": true,
+      "quantity": "36",
+      "image": "https://divineshop.vn/image/catalog/Anh-SP-New/Tien/Anh%20SP/26.3/youtube-pre.png"
+    },
+    {
+      "id": "saass4",
+      "category": "1",
+      "name": "Code gia hạn Adobe Full App",
+      "image": "https://divineshop.vn/image/catalog/Anh/Banner%2014%20thang%2011/photo_2020-11-20_18-50-42.jpg",
+      "price": "50.000",
+      "status": false,
+      "description": "Gói gia hạn có thể cộng dồn. Mỗi tài khoản có thể mua tối đa 3-12 tháng. Để nhập code được ổn định quý khách vui lòng mua mỗi ngày 1 code.",
+      "quantity": 36
+    },
+    {
+      "id": "scjsbcids-3933",
+      "category": "1",
+      "name": "Tài khoản HMA VPN 1 tháng",
+      "image": "https://divineshop.vn/image/catalog/image_compression/05T2DmlfytER0zelDsaVecp-9.1569474148.fit_scale.size_1028x578.jpeg",
+      "price": "513.000",
+      "status": false,
+      "description": "Quan trọng: Sản phẩm chỉ sử dụng trên 1 thiết bị tại 1 thời điểm. Hạn sử dụng của sản phẩm KHÔNG cộng dồn khi mua số lượng nhiều sản phẩm. Quý khách vui lòng không đổi mật khẩu khi sử dụng.",
+      "quantity": 36
+    },
+    {
+      "id": "wkds-022d",
+      "category": "1",
+      "name": "Steam Wallet Code 236k VNĐ",
+      "image": "https://divineshop.vn/image/catalog/image_compression/wallet80HKD.png",
+      "price": "471.000",
+      "status": true,
+      "description": "Steam Wallet Code không còn lạ lẫm gì nữa với cộng đồng game thủ nữa khi nó ngày một được ưa chuộng và thịnh hành hơn so với nạp card steam wallet bởi khả năng nạp nhanh, cơ hội được chiết khấu lớn và đặc biệt là khỏi cần nạp thẻ cào làm gì cho mất công lách nhách.",
+      "quantity": 42
+    },
+    {
+      "id": "wdw11",
+      "category": "1",
+      "name": "Valheim",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/892970/header.jpg",
+      "price": "824.000",
+      "status": true,
+      "description": "A brutal exploration and survival game for 1-10 players, set in a procedurally-generated purgatory inspired by viking culture. Battle, build, and conquer your way to a saga worthy of Odin’s patronage!",
+      "quantity": 86
+    },
+    {
+      "id": "wdxde14",
+      "category": "2",
+      "name": "PlayerUnknown's Battlegrounds",
+      "image": "https://divineshop.vn/image/catalog/Anh-SP-New/PUBG-ratbt.png",
+      "price": "894.000",
+      "status": true,
+      "description": "Sau một năm đầy biến động, cuối cùng PlayerUnknown’s Battlegrounds đã dần trở lại sân chơi khi cuối năm 2018 họ đã thu hút được số lượng đông đảo người chơi. Đối với các tựa game bắn súng khác, người chơi có thể dùng tiền để trang bị cho mình những vũ khí ưng ý nhất. Nhưng đối với game Pubg, tất cả người chơi đều có khởi đầu từ hai bàn tay trắng, nên cơ hội chiến thắng là tương đương nhau. Đây là điểm khác biệt đầu tiên tạo nên hứng thú cho người do tính cạnh tranh sinh tồn quyết liệt trong suốt trận đấu.",
+      "quantity": 94
+    },
+    {
+      "id": "ddwsws17",
+      "category": "2",
+      "name": "Dying Light",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/239140/header.jpg",
+      "price": "694.000",
+      "status": false,
+      "description": "Dù đã ra mắt được gần 5 năm, thế nhưng Dying Light vẫn thu hút được rất nhiều game thủ tham gia. Cần nhớ rằng, với một tựa game có tuổi đời như Dying Light, thì việc giữ chân được người chơi như thế này là một điều rất ấn tượng, vì theo những thông tin khi game ra mắt, mỗi tuần có tới tận gần 100 nghìn game thủ chơi Dying Light. Việc giữ được số lượng người chơi đông đảo và ủng hộ game nhiệt thành như thế này xứng đáng là bài học cho bất kỳ hãng game nào. ",
+      "quantity": 65
+    },
+    {
+      "id": "dcndsjhwjbc-dcjd18",
+      "category": "2",
+      "name": "ADR1FT",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/300060/header.jpg",
+      "price": "797.000",
+      "status": false,
+      "description": "ADR1FT là một trải nghiệm góc nhìn thứ nhất (FPX) nhập vai kể câu chuyện của một phi hành gia đang gặp nguy hiểm. Lơ lửng giữa đống đổ nát của một trạm vũ trụ bị phá hủy không còn ký ức và bộ đồ EVA bị hư hỏng nặng từ từ rò rỉ oxy, người sống sót duy nhất đấu tranh để xác định nguyên nhân của sự kiện thảm khốc cướp đi sinh mạng của mọi người trên tàu. Người chơi chiến đấu để sống sót bằng cách khám phá đống đổ nát để tìm tài nguyên quý giá, đồng thời vượt qua những thử thách trong môi trường khắc nghiệt để sửa chữa EEV bị hư hỏng và trở về nhà an toàn.",
+      "quantity": 22
+    },
+    {
+      "id": "sjhbjsb-dsds19",
+      "category": "2",
+      "name": "BioShock: The Collection",
+      "image": "https://steamcdn-a.akamaihd.net/steam/subs/127633/header.jpg",
+      "price": "841.000",
+      "status": false,
+      "description": "Cốt truyện Bioshock bắt đầu vào một ngày đen tối của năm 1960, một chiếc máy bay thương mại bị rơi và đâm xuống biển Đại Tây Dương. Người sống sót duy nhất là Jack bơi được vào một ngọn hải đăng ở gần đó. Lần mò trong hải đăng, Jack tìm thấy một buồng hình cầu dạng tàu ngầm và khởi động nó. Buồng thang máy này lập tức chìm xuống và đưa Jack đến một thành phố dưới đáy biển có tên gọi là Rapture. Thiết bị nghe nhìn bên trong buồng hình cầu này phát thông điệp của Andrew Ryan, người sáng lập Rapture, chào đón hành khách trong khi đang di chuyển.",
+      "quantity": 98
+    },
+    {
+      "id": "ef632863-daaa-4aff-9808-dea0baff60f9",
+      "name": "Devil Daggers",
+      "price": "19184",
+      "status": true,
+      "quantity": "12",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/422970/header.jpg",
+      "category": "1",
+      "description": "Lấy cảm hứng từ các trò chơi FPS và arcade ở những năm 1990, Devil Daggers là một game bắn súng có nhịp độ nhanh đưa bạn vào một đấu trường vực thẳm để đối mặt với vô số quân đoàn quỷ dữ. Bạn sẽ được trang bị một chiếc dao găm ma thuật và cùng với đó là hệ thống di chuyển linh hoạt, hãy chiến đấu để tồn tại lâu nhất có thể. Ganh đua thời gian tới từng giây để với Steam Friends hoặc trên các bảng xếp hạng toàn cầu xem ai mới là người tổn tại lâu nhất . Tinh thần và kỹ năng của bạn sẽ được thử thách với trò chơi này."
+    },
+    {
+      "id": "bc5279a6-d130-40f4-bec8-d1edd97dd469",
+      "name": "Arma 3",
+      "price": "282828",
+      "status": true,
+      "quantity": "2",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/107410/header.jpg",
+      "category": "1",
+      "description": "Nếu bạn đã quá nhàm chán với những thể loại game bắn súng chỉ đơn thuần chạy và bắn khá là đơn giản như Call of Duty hoặc Battlefield, bạn muốn tìm kiếm những thử thách hơn khi chơi một tựa game bắn súng, thì hãng Bohemia Interactive sẽ không làm bạn thất vọng."
+    },
+    {
+      "id": "eca095f0-f6df-4558-85b7-0522da8343a9",
+      "name": "Blockstorm",
+      "category": "2",
+      "price": "199909",
+      "status": true,
+      "quantity": "22",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/263060/header.jpg",
+      "description": "Blockstorm là một trò chơi FPS lấy bối cảnh thế giới được tạo nên từ các khối và có thể bị phá hủy. Bản chất voxel của các nhân vật cùng với bản đồ và trình chỉnh sửa trong trò chơi cho phép bạn tùy chỉnh hoàn toàn trò chơi của mình và nhanh chóng chia sẻ trải nghiệm của bạn với những người chơi khác. Bạn có thể tự do tạo ra bản đồ và nhân vật của riêng mình hoặc tùy chỉnh lựa chọn những bản đồ và nhân vật hiện có của trò chơi. Cùng với đó bạn cũng có thể chỉnh sửa vũ khí của bản thân."
+    },
+    {
+      "id": "ae25137e-0cad-4c92-b975-e4d949e11fce",
+      "name": "Game of the Year Edition",
+      "category": "2",
+      "price": "1120.000",
+      "status": true,
+      "quantity": "2",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/269670/header.jpg",
+      "description": "With BADLAND: Game of the Year Edition, you get to experience the multi-award-winning action adventure like never before. Redesigned for Steam, BADLAND: GOTY Edition builds on the stunningly atmospheric, hand-painted graphics of the original BADLAND with enhanced, above Full-HD visuals, completely redesigned controls, over 15 hours of single player campaign and awesome multiplayer fun for up-to-four players with both local co-op & battle modes."
+    },
+    {
+      "id": "c85faa74-1cdd-4557-9e36-586a2501a405",
+      "name": "Arma 3 Apex",
+      "category": "1",
+      "price": "100.000",
+      "status": true,
+      "quantity": "1",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/395180/header.jpg",
+      "description": "Bạn cần cài đặt game Arma 3 để sử dụng phần mở rộng này. Click vào ảnh để xem chi tiết game :"
+    },
+    {
+      "id": "b85faa74-1cdd-4557-9e36-586a2501a405",
+      "name": "8-Bit Invaders!",
+      "category": "2",
+      "price": "200.000",
+      "status": true,
+      "quantity": "1",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/531680/header.jpg",
+      "description": "8-Bit Invaders! is a fast-paced, retro Real-Time Strategy game for the PC. Control the military might of the GALACTIC MARINE CORPS or invade with the devastating power of the alien CRANIOIDS! No matter which side you choose, everything in 8-Bit Invaders! is easy to understand for beginners and hardcore gamers alike. Collect resources, build your army, and then crush your opponent!"
+    },
+    {
+      "id": "c85faa74-1cdd-4557-9e36-586a2501a4051",
+      "name": "Deep Rock Galactic",
+      "category": "1",
+      "price": "210.000",
+      "status": true,
+      "quantity": "1",
+      "image": "https://steamcdn-a.akamaihd.net/steam/apps/548430/header.jpg",
+      "description": "Đúng như đã hẹn vào giữa tháng Hai này, Deep Rock Galactic – tựa game hành động góc nhìn thứ nhất được công bố tại buổi họp báo tiền E3 2017 của Microsoft, diễn ra vào đầu tháng Sáu năm ngoái – đã chính thức được bộ đôi Ghost Ship Games và Coffee Stain Publishing phát hành đến tay người chơi PC và Xbox One trên hệ thống theo hình thức Early Access, cùng với hệ thống Xbox Live theo hình thức Game Preview.Trong Deep Rock Galactic, người chơi sẽ vào vai các thần lùn “hành nghề” thợ mỏ, tìm kiếm kho báu trong các hệ thống hang động chằng chịt, với vô số hiểm nguy chờ đón họ mà đáng ngại nhất chính là những chủng loại quái vật đáng sợ ẩn mình khắp nơi.Điều thú vị là các hang động – các màn chơi – trong Deep Rock Galactic được xây dựng một cách hoàn toàn ngẫu nhiên ngay trong khi người chơi trải nghiệm game. Kết hợp cùng khả năng phá hủy môi trường không giới hạn, kho vũ phí, vật phẩm đa dạng, điều này đã góp phần tạo nên giá trị chơi lại đáng nể cho game"
+    },
+    {
+      "id": "c85faa74-1cdd-4557-9e36-586a2501405",
+      "name": "Car Mechanic Simulator",
+      "category": "2",
+      "price": "190.000",
+      "status": true,
+      "quantity": "1",
+      "image": "https://steamcdn-a.akamaihd.net/steam/subs/76090/header.jpg",
+      "description": "Car Mechanic Simulator 2015 Gold Edition"
+    }
+  ],
+  "categorys": [
+    {
+      "id": "3",
+      "name": "default category"
+    },
+    {
+      "id": "1",
+      "name": "Game trên Origin"
+    },
+    {
+      "id": "2",
+      "name": "Game trên Strem"
+    }
+  ],
+  "users": [
+    {
+      "id": "123456789",
+      "firstName": "Anh",
+      "lastName": "Do",
+      "fullName": "Do Quynh Anh",
+      "username": "Anhdqph10540",
+      "password": "",
+      "dateCreate": "",
+      "avatar": ""
+    }
+  ],
+  "cards": [],
+  "feedback": [
+    {
+      "id": "e573b599-75fe-4548-acef-effeceb9bc47",
+      "name": "test",
+      "email": "test@gmail.com",
+      "sdt": "0832582556",
+      "msg": "djsbhs dddcisudhsdc cisducisdcbi cndicnsdic"
+    },
+    {
+      "id": "fb14c46e-8337-4b18-8a38-b0dc0e18ceb4",
+      "name": "test2",
+      "email": "test2@gmail.com",
+      "sdt": "0832582556",
+      "msg": "ugyub gtf65gufr trddybnkr 5d3e54"
+    }
+  ]
+}

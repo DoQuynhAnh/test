@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./public/style/main.css">
+	<link rel="stylesheet" href="./public//style/reponsive.css">
+
+</head>
+
+<body>
+
+	<div id="header"></div>
+	<script>
+		window.addEventListener("hashchange", () => {
+			const url = document.location.hash.toLowerCase();
+			if (url.indexOf("admin") != -1) {
+				location.reload();
+			}
+		});
+	</script>
+
+	<script>
+		const toggleMenuMoble = () => {
+			// var btnToggle = document.getElementById('sidebarCollapse')
+			var elementToggle = document.getElementById("sidebar")
+			document.body.style.position = "fixed"
+			elementToggle.classList.add('active')
+			document.getElementsByClassName('overlay')[0].classList.add('active')
+		}
+
+		const closeCollapse = () => {
+			document.body.style.position = "unset"
+			document.getElementById("sidebar").classList.remove('active')
+			document.getElementsByClassName('overlay')[0].classList.remove('active')
+		}
+	</script>
+
+	<div class="container">
+		<div id="banner"></div>
+		<div id="main-content">
+		</div>
+	</div>
+
+	<script src="main.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+	<div style="clear: both; margin-bottom: 2rem;"></div>
+
+	<footer class="border-thin">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="paragraph">DIVINESHOP</div>
+					<ul>
+						<li><a href="#">Game bản quyền là gì?</a></li>
+						<li><a href="#">Điều khoản dịch vụ</a></li>
+						<li><a href="#">Chính sách bảo mật</a></li>
+						<li><a href="#">Donate nhân viên CSKH</a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-2">
+					<div class="paragraph">TÀI KHOẢN</div>
+					<ul>
+						<li><a href="#">Giỏ hàng</a></li>
+						<li><a href="#">Đăng kí</a></li>
+						<li><a href="#">Đăng nhập</a></li>
+						<li><a href="#">Sản phẩm đã mua</a></li>
+						<li><a href="#">Chế độ bảo hành</a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="paragraph">LIÊN HỆ</div>
+					<ul>
+						<li><a href="#">Địa chỉ giao dịch trực tiếp</a></li>
+						<li>Hotline: <a href="tel: 0832582556">0832582556</a> - (8:00 - 24:00)</li>
+						<li>Email: anhdqph10540@fpt.edu.vn</li>
+						<li><a href="#">Fanpage</a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-4">
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js">
+	</script>
+</body>
+
+</html>
