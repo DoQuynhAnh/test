@@ -32,7 +32,8 @@ export const update = (req, res) => {
       }
       req.profile.hashed_password = undefined;
       req.profile.salt = undefined;
-      res.json(user);
+      // let newUser = {...user._doc, hashed_password: "", salt: ""}
+      res.json(req.profile);
     }
   );
 };

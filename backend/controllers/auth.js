@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import expressJwt from "express-jwt";
 
 export const singup = (req, res) => {
-  const user = new User(req.body);
+  const user = new User(req.body); 
   user.save((error, user) => {
     if (error) {
       console.log(error);
@@ -61,8 +61,6 @@ export const requireSignin = expressJwt({ //authorization token
 
 export const isAuth = (req, res, next) => {
   let user = req.profile && req.auth && req.profile._id == req.auth._id;
-  console.log("auth: " , req.auth);
-  console.log("profile: " , req.profile);
   if (!user) {
     return res.status(400).json({
       err: "Quyền truy cập bị Từ chối"
