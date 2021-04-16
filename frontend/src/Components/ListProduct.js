@@ -60,6 +60,8 @@ const ListProduct = {
   },
 
   async afterRender() {
+    const id = localStorage.getItem("id")
+
     const btns = $("#table-render .btn-remove");
     btns.forEach((element) => {
       const targetBtn = element.dataset.id;
@@ -67,7 +69,7 @@ const ListProduct = {
         if (element.classList.contains("btn-remove")) {
           let ask = confirm("are you sure to delete this item!!");
           if (ask) {
-            await ProductApi.delete(targetBtn);
+            await ProductApi.delete(targetBtn, id);
             await reRender(ListProduct, "#table-render");
             $("#showAlert").classList.remove("d-none");
             setTimeout(() => {

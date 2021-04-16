@@ -41,7 +41,20 @@
 		}
 	</script>
 
-	<div class="container">
+	<script>
+		window.addEventListener("hashchange", () => {
+			const url = document.location.hash.toLowerCase();
+			if (url.indexOf("login") != -1) {
+				document.getElementById("container").classList.add("container-fluid")
+				document.getElementById("container").classList.remove("container")
+			} else {
+				document.getElementById("container").classList.add("container")
+				document.getElementById("container").classList.remove("container-fluid")
+			}
+		});
+	</script>
+
+	<div class="container p-0" id="container">
 		<div id="banner"></div>
 		<div id="main-content">
 		</div>

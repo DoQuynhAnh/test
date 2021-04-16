@@ -96,15 +96,18 @@ const RepairProduct = {
   afterRender() {
     $("#changeProduct").addEventListener("submit", (e) => {
       try {
+        
         const { id } = parseRequestUrl();
+        let idChangeProduct = localStorage.getItem("id")
+
         e.preventDefault();
         let getForm = document.querySelector("#changeProduct");
         let getDataForm = new FormData(getForm);
-        ProductApi.put(id, getDataForm);
+        ProductApi.put(id, getDataForm, idChangeProduct);
       } catch (error) {
         console.log(error);
       } finally {
-        window.location = "http://localhost:8080/#/admin";
+        // window.location = "http://localhost:8080/#/admin";
       }
     });
   },

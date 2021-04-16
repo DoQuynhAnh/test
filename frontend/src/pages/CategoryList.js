@@ -45,14 +45,17 @@ const CategoryList = {
 		`;
   },
   async afterRender() {
+
+    const idCate = localStorage.getItem("id")
     const array = document.querySelectorAll("#category-render .del");
+
     array.forEach((element) => {
       const BtnId = element.dataset.id;
       element.addEventListener("click", async () => {
         if (element.classList.contains("del")) {
           let ask = confirm("are you sure to delete this item!!");
           if (ask) {
-            await CategoryApi.delete(BtnId);
+            await CategoryApi.delete(BtnId, idCate);
             await reRender(CategoryList, "#category-render");
             document.querySelector("#showAlertCate").classList.remove("d-none")
             setTimeout(() => {

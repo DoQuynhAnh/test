@@ -1,8 +1,6 @@
 import ProductApi from "../api/ProductApi";
-import { parseRequestUrl } from "../utils";
 const ProductsPage = {
   async render() {
-    const { id } = parseRequestUrl();
     const { data: products } = await ProductApi.getAll();
     return /*html*/ `
 		<div class="container " >
@@ -17,7 +15,7 @@ const ProductsPage = {
 								<a href="#">
 									<div class="img">
 										<img class="check_img_errs"
-											src="${item.image}">
+                    src="http://localhost:4000/api/product/photo/${item._id}">
 									</div>
 								</a>
 								<div class="item-info">
@@ -69,9 +67,5 @@ const ProductsPage = {
   </div>
   `;
   },
-
-  // afterRender() {
-    
-  // }
 };
 export default ProductsPage;

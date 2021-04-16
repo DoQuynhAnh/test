@@ -82,13 +82,20 @@ const AddProductPage = {
   },
 
   afterRender() {
-    $("#add_new").addEventListener("submit", (e) => {
-      let get_form = document.querySelector("#add_new");
-      let get_form2 = new FormData(get_form);
-      e.preventDefault();
-      ProductApi.add(get_form2);
-      // await reRender(AddProductPage, "#add-new-page");
-    });
+    try {
+      let id = localStorage.getItem("id");
+
+      $("#add_new").addEventListener("submit", (e) => {
+        let get_form = document.querySelector("#add_new");
+        let get_form2 = new FormData(get_form);
+        e.preventDefault();
+        ProductApi.add(get_form2, id);
+        // window.location = "http://localhost:8080/#/admin";
+
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 

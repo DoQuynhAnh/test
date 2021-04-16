@@ -1,9 +1,27 @@
 import CategoryApi from "../api/CategoryApi";
+import { parseRequestUrl } from "../utils";
+import axios from "axios";
 
 const Banner = {
   async render() {
+    let id = localStorage.getItem("id");
+    let user = {};
+
+    if (id) {
+      let token = localStorage.getItem("token");
+      const CreateAxios = axios.create({
+        baseURL: " http://localhost:4000/api",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await CreateAxios.get(`/user/${id}`);
+      user = data.data;
+    }
+
     const { data: categorys } = await CategoryApi.getAll();
-    return /*html*/`
+    return /*html*/ `
         <div class="home-page banner-home">
         <div class="menu-2" style="margin-top: 0">
             <div class="container padd-0" style="margin-top: 6px;">
@@ -14,10 +32,16 @@ const Banner = {
                     </div>
                     <div class="nav-menu">
                         <ul>
+                            ${
+                              user.role === 1
+                                ? `
                             <li>
-                                <a href="#/admin"><i class="fas fa-home"></i>
-                                <span>Trang quản trị</span></a>
+                              <a href=${`#/admin/${id}`}><i class="fas fa-home"></i>
+                              <span>Trang quản trị</span></a>
                             </li>
+                            `
+                                : ""
+                            }
                             <li>
                                 <a href="#/products" rel="external"><i class="fab fa-product-hunt"></i>
                                 <span>List sản phẩm</span></a>
@@ -60,8 +84,7 @@ const Banner = {
                             <a href="#"><i class="far fa-credit-card"></i><span>Tin tức</span></a>
                         </div>
                         <div class="quick-menu head-link">
-                            <a href="#/contact"><i class="fas fa-life-ring"></i><span>Hỗ
-                            trợ</span></a>
+                            <a href="#/contact"><i class="fas fa-life-ring"></i><span>Đăng ký</span></a>
                         </div>
                     </div>
                     <div class="row slider-container">

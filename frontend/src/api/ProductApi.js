@@ -1,7 +1,7 @@
 import { axiosClient } from "./axiosClient";
 
 const ProductApi = {
-  getAll(limit) {
+  getAll(limit, id) {
     if (limit) {
       let url = `/products?_limit=${limit}`;
       return axiosClient.get(url);
@@ -14,12 +14,12 @@ const ProductApi = {
     const url = `/product/${id}`;
     return axiosClient.get(url);
   },
-  delete(id) {
-    const url = `/product/${id}`;
+  delete(id, idUser) {
+    const url = `/product/${id}/${idUser}`;
     return axiosClient.delete(url);
   },
-  add(body) {
-    const url = `/products/create`;
+  add(body, idUser) {
+    const url = `/products/create/${idUser}`;
     return axiosClient.post(url, body);
   },
   paginate(page, limit) {
@@ -29,8 +29,8 @@ const ProductApi = {
   getCategory(category) {
     return axiosClient.get(`products?category=${category}`);
 	},
-	put(id, body) {
-    const url = `/product/${id}`;
+	put(id, body, idUser) {
+    const url = `/product/${id}/${idUser}`;
     return axiosClient.put(url, body);
 	},
 };

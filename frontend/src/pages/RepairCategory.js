@@ -37,13 +37,15 @@ const RepairCategory = {
 
   afterRender() {
     try {
+      let idUserCate = localStorage.getItem("id")
+
       $("#repair-category").addEventListener("submit", async (e) => {
         e.preventDefault();
         const { id } = parseRequestUrl();
         let targetForm = document.querySelector("#repair-category");
         let getDataForm = new FormData(targetForm);
-        await CategoryApi.put(id, getDataForm);
-        // create_axios.put(`/category/${id}`, getDataForm);
+        await CategoryApi.put(id, getDataForm, idUserCate);
+        window.location = "http://localhost:8080/#/admin";
       });
     } catch (error) {
       console.log(error);

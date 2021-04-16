@@ -6,7 +6,6 @@ const HomePage = {
   async render() {
     try {
       const { data: products } = await ProductApi.getAll();
-      console.log(products);
       return /*html*/ `
 				
 				<div class="container mt-4" id="addCart">
@@ -150,23 +149,23 @@ const HomePage = {
   async afterRender() {
     const btns = $(".item-btn-a");
     // console.log(btns[0].id);
-      btns.forEach((element) => {
-        element.addEventListener("click", async () => {
-          const targetBtn = element.id;
-          const { data: item } = await ProductApi.get(targetBtn);
-          let carts = localStorage.getItem("cart");
-          carts = carts === null ? [] : JSON.parse(carts);
-          let existed = await carts.map((ele) => ele.id).indexOf(item.id);
-          if (existed == -1) {
-            let product = item;
-            carts.push({ ...product, count: 1 });
-            localStorage.setItem("cart", JSON.stringify(carts));
-          } else {
-            carts[existed].count += 1;
-            localStorage.setItem("cart", JSON.stringify(carts));
-          }
-        });
+    btns.forEach((element) => {
+      element.addEventListener("click", async () => {
+        const targetBtn = element.id;
+        const { data: item } = await ProductApi.get(targetBtn);
+        let carts = localStorage.getItem("cart");
+        carts = carts === null ? [] : JSON.parse(carts);
+        let existed = await carts.map((ele) => ele.id).indexOf(item.id);
+        if (existed == -1) {
+          let product = item;
+          carts.push({ ...product, count: 1 });
+          localStorage.setItem("cart", JSON.stringify(carts));
+        } else {
+          carts[existed].count += 1;
+          localStorage.setItem("cart", JSON.stringify(carts));
+        }
       });
+    });
   },
 };
 export default HomePage;

@@ -14,7 +14,7 @@ const ViewDetailFeed = {
         <input 
           class="form-control"
           name="name"
-          value=${item.name} 
+        value=${item.name}
           disabled
           />
       </div>

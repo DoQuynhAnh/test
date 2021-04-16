@@ -1,12 +1,13 @@
 import ListProduct from "../Components/ListProduct";
+import { parseRequestUrl } from "../utils";
 import CategoryList from "./CategoryList";
-import ListFeedBack from "../Components/ListFeedBack";
+
 
 const adminPage = {
   async render() {
-    // const { id } = parseRequestUrl();
+    const { id } = parseRequestUrl();
     return /*html*/ `
-    <div class="container-fluid">
+    <div class="container-fluid mt-3">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-static pt-3">
@@ -16,7 +17,7 @@ const adminPage = {
                                 line-height: 2;
                                 text-align: center;
                             "
-                            class="nav-link " 
+                            class="nav-link active" 
                             id="v-pills-home-tab" 
                             data-toggle="pill" 
                             href="#v-pills-home" 
@@ -31,7 +32,7 @@ const adminPage = {
                                 line-height: 2;
                                 text-align: center;
                             "
-                            class="nav-link active" 
+                            class="nav-link " 
                             id="v-pills-profile-tab" 
                             data-toggle="pill" 
                             href="#v-pills-profile" 
@@ -58,12 +59,12 @@ const adminPage = {
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="tab-content" id="v-pills-tabContent">
-              <div class="tab-pane fade " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="table-responsive" id="table-render">
                   ${await ListProduct.render()}
                 </div>
               </div>
-              <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">.
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">.
                 <div class="table-responsive" id="category-render">
                   ${await CategoryList.render()}
                 </div>

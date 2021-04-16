@@ -18,13 +18,15 @@ import CategoryList from "./pages/CategoryList.js";
 import RepairCategory from "./pages/RepairCategory.js";
 import ProductDetail from "./pages/ProductDetail.js";
 import ViewDetailFeed from "./pages/ViewDetailFeed.js";
+import LoginPage from "./pages/LoginPage";
 
 const routes = {
   "/": Homepage,
+  "/user/:id": Homepage,
   "/products": ProductsPage,
   "/products/:id": ProductDetailPage,
   "/categorys/:id": Category,
-  "/admin": adminPage,
+  "/admin/user/:id": adminPage,
   "/add": AddProductPage,
   "/repair/:id": RepairProduct,
   "/cart": ViewCartPage,
@@ -33,6 +35,7 @@ const routes = {
   "/add-category": AddNewCategory,
   "/sua-category/:id": RepairCategory,
   "/feedback/:id": ViewDetailFeed,
+  "/login": LoginPage,
 };
 
 const router = async () => {
@@ -43,18 +46,25 @@ const router = async () => {
       (request.id ? "/:id" : "");
 
     const page = routes[parseUrl];
-
     const main = $("#main-content");
     const header = $("#header");
     const banner = $("#banner");
-    // const footer = $("#footer");
+    if (request.resource === "login") {
+      header.innerHTML = "";
+      banner.innerHTML = "";
+      main.innerHTML = await page.render();
+      await page.afterRender();
+    }
+
     if (request.resource === "admin") {
       header.innerHTML = await Header.render();
-      main.innerHTML = await page.render();
-      page.afterRender();
-      // ListProduct.handlePaginate();
-    } else {
+      main.innerHTML = await adminPage.render();
+      adminPage.afterRender();
+      Header.afterRender()
+    }
+    if (request.resource !== "admin" && request.resource !== "login" ) {
       header.innerHTML = await Header.render();
+      await Header.afterRender()
       banner.innerHTML = await Banner.render();
       main.innerHTML = await page.render();
       if (
@@ -71,9 +81,6 @@ const router = async () => {
       ) {
         await page.afterRender();
       }
-      // if (page == ViewCartPage || page == ListProduct) {
-      //   page.handleDelete();
-      // }
     }
   } catch (error) {
     const main = $("#main-content");

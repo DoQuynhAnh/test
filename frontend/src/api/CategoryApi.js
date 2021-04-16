@@ -9,16 +9,16 @@ const CategoryApi = {
     const url = `/category/${id}`;
     return axiosClient.get(url);
   },
-  post(body) {
-    const url = `/create/category`;
+  post(body, userID) {
+    const url = `/create/category/${userID}`;
     return axiosClient.post(url, body);
   },
-  delete(id) {
-    const url = `/category/${id}`;
+  delete(id, userID) {
+    const url = `/category/${id}/${userID}`;
     return axiosClient.delete(url);
   },
-  put(id, body) {
-    const url = `/category/${id}`;
+  put(id, body, userID) {
+    const url = `/category/${id}/${userID}`;
     return axiosClient.put(url, body);
 	},
 };
