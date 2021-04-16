@@ -8,8 +8,14 @@ export const create = (req, res) => {
   form.parse(req, (err, fields, files) => {
     const category = new Category(fields);
     const { name } = fields;
-    console.log(fields);
-    // console.log(name);
+    console.log("value: ", fields);
+
+    if(err) {
+      console.log(err);
+      return res.status(400).json({
+        err: "kiểm tra lại giữ liệu"
+      })
+    }
 
     if (!name) {
       return res.status(400).json({
@@ -60,16 +66,34 @@ export const list = (req, res) => {
 };
 
 export const upadate = (req, res) => {
-  console.log("data: ", req.body);
-  let category = new Category(lodash.assignIn(req.category, req.body));
-  console.log("category: ", category);
-  category.save((err, data) => {
-    if (err) {
-      res.status(400).json({
-        err: "update category failed",
+  const form = formidable.IncomingForm();
+  form.keepExtension = true;
+  form.parse(req, (err, fields, files) => {
+    let category = new Category(lodash.assignIn(req.category, fields));
+    const { name } = fields;
+    console.log("value: ", fields);
+
+    if(err) {
+      console.log(err);
+      return res.status(400).json({
+        err: "kiểm tra lại giữ liệu"
+      })
+    }
+
+    if (!name) {
+      return res.status(400).json({
+        err: "Yêu cầu nhập tên danh mục",
       });
     }
-    res.json(data);
+
+    category.save((err, data) => {
+      if (err) {
+        return res.status(400).json({
+          error: "Category does not exist",
+        });
+      }
+      res.json({ data });
+    });
   });
 };
 

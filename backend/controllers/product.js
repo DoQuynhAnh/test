@@ -35,10 +35,10 @@ export const create = (req, res) => {
 
     newProduct.save((err, data) => {
       if (err) {
+        console.log("error ", err);
         return res.status(400).json({
           error: "Add product failed",
         });
-        console.log("error ", err);
       }
       res.json(data);
     });
@@ -80,6 +80,7 @@ export const update = (req, res) => {
   let form = new formidable.IncomingForm();
   form.keepExtensions = true;
   form.parse(req, (err, fields, files) => {
+    fields = { ...fields, isShipping: true, price: parseFloat(fields.price) };
     if (err) {
       return res.status(400).json({
         error: "Image could not be uploaded",

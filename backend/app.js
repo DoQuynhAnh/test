@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import expressValidator from 'express-validator';
-import cookie from "cookie-parser"
+import cookieParser from "cookie-parser"
 
 
 const app = express();
@@ -15,6 +15,7 @@ import newRouter from "./routers/product.router";
 import categoryRouter from "./routers/category.router";
 import authRouter from "./routers/auth.router";
 import userRouter from "./routers/user.router";
+import newsRouter from "./routers/news.router"
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(
@@ -25,7 +26,7 @@ app.use(
 app.use(morgan("dev"));
 app.use(expressValidator())
 app.use(cors());
-app.use(cookie())
+app.use(cookieParser())
 
 // connect db
 mongoose
@@ -48,6 +49,7 @@ app.use("/api", newRouter);
 app.use("/api", categoryRouter);
 app.use("/api", authRouter);
 app.use("/api", userRouter);
+app.use("/api", newsRouter);
 
 app.listen(port, () => {
   console.log(`server start :${port}`);

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import expressJwt from "express-jwt";
 
 export const singup = (req, res) => {
-  const user = new User(req.body); 
+  const user = new User(req.body);
   user.save((error, user) => {
     if (error) {
       console.log(error);
@@ -19,7 +19,7 @@ export const singup = (req, res) => {
 
 export const signin = (req, res) => {
   const { email, password } = req.body;
-
+  console.log("login ", req.body);
   User.findOne({ email }, (err, user) => {
     if (err || !user) {
       return res.status(400).json({
@@ -33,9 +33,9 @@ export const signin = (req, res) => {
       });
     }
 
-    const token = jwt.sign({ _id: user._id }, '123456');
+    const token = jwt.sign({ _id: user._id }, "123456");
 
-    res.cookie("cookie", token, { expire: new Date() + 9999 });
+    res.cookie("token", token, { expire: new Date() + 9999 });
 
     const { _id, name, email, role } = user;
 
@@ -53,27 +53,44 @@ export const signout = (req, res) => {
   });
 };
 
-export const requireSignin = expressJwt({ //authorization token 
-  secret: '123456',
+export const requireSignin = expressJwt({
+  //authorization token
+  secret: "123456",
   algorithms: ["HS256"], // added later
   userProperty: "auth",
+  getToken: function fromHeaderOrQuerystring(req) {
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.split(" ")[0] === "Bearer"
+    ) {
+      console.log(
+        "req.headers.authorization ",
+        req.headers.authorization.split(" ")[1]
+      );
+      return req.headers.authorization.split(" ")[1];
+    } else if (req.query && req.query.token) {
+      console.log("req.query.token", req.query.token);
+      return req.query.token;
+    }
+    return null;
+  },
 });
 
 export const isAuth = (req, res, next) => {
   let user = req.profile && req.auth && req.profile._id == req.auth._id;
   if (!user) {
     return res.status(400).json({
-      err: "Quyền truy cập bị Từ chối"
-    })
-  } 
-  next()
+      err: "Quyền truy cập bị Từ chối",
+    });
+  }
+  next();
 };
 
 export const isAdmin = (req, res, next) => {
-  if(req.profile.role === 0) {
+  if (req.profile.role === 0) {
     return res.status(400).json({
-      err: "ko có quyền truy cập"
-    })
+      err: "ko có quyền truy cập",
+    });
   }
   next();
-}
+};
