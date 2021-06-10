@@ -1,10 +1,10 @@
-import CardApi from "../api/CardApi";
 import ProductApi from "../api/ProductApi";
 import { $ } from "../utils";
 
 const HomePage = {
   async render() {
     try {
+      let id = localStorage.getItem("id");
       const { data: products } = await ProductApi.getAll();
       return /*html*/ `
 				
@@ -34,13 +34,19 @@ const HomePage = {
 								</a>
 								<div class="item-price">
 									<span class="cur-p">${item.price}đ</span>
-								</div>
-								<div class="item-btn-a" id=${item._id}>
-									<a>
-									<i class="fas fa-shopping-cart "></i>
-									</a>
-								</div>
-								<a href="#/products/${item._id}" class="item-btn" style="margin-top: 10px">Chi tiết</a>
+                </div>
+                ${
+                  id !== null
+                    ? `<div class="item-btn-a" id=${item._id}>
+                          <a>
+                            <i class="fas fa-shopping-cart "></i>
+                          </a>
+                        </div>`
+                    : ""
+                }
+								<a href="#/products/${
+                  item._id
+                }" class="item-btn" style="margin-top: 10px">Chi tiết</a>
 							</div>
 							</div>
 						</div>
@@ -77,13 +83,12 @@ const HomePage = {
 								<div class="item-price">
 									<span class="cur-p">${item.price}đ</span>
 								</div>
-								<div class="item-btn-a" id=${item.id}>
+								<div class="item-btn-a" id=${item._id}>
 									<a>
 									<i class="fas fa-shopping-cart "></i>
-
 									</a>
 								</div>
-								<a href="#/products/${item.id}" class="item-btn" style="margin-top: 10px">Chi tiết</a>
+								<a href="#/products/${item._id}" class="item-btn" style="margin-top: 10px">Chi tiết</a>
 							</div>
 							</div>
 						</div>
@@ -148,14 +153,13 @@ const HomePage = {
   },
   async afterRender() {
     const btns = $(".item-btn-a");
-    // console.log(btns[0].id);
     btns.forEach((element) => {
       element.addEventListener("click", async () => {
         const targetBtn = element.id;
         const { data: item } = await ProductApi.get(targetBtn);
         let carts = localStorage.getItem("cart");
         carts = carts === null ? [] : JSON.parse(carts);
-        let existed = await carts.map((ele) => ele.id).indexOf(item.id);
+        let existed = await carts.map((ele) => ele._id).indexOf(item._id);
         if (existed == -1) {
           let product = item;
           carts.push({ ...product, count: 1 });

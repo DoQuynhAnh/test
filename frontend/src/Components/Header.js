@@ -134,11 +134,11 @@ const Header = {
   },
 
   async afterRender() {
-    let btnLogoutHead = $("#logout")
+    let btnLogoutHead = $("#logout");
     if (btnLogoutHead.length !== 0) {
       await $("#logout").addEventListener("click", () => {
-        console.log("chay");
         localStorage.clear();
+        window.location = `http://localhost:8080/#`;
         location.reload();
       });
     }

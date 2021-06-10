@@ -1,11 +1,32 @@
 import ListProduct from "../Components/ListProduct";
-import { parseRequestUrl } from "../utils";
+import axios from 'axios'
 import CategoryList from "./CategoryList";
 
 
 const adminPage = {
   async render() {
-    const { id } = parseRequestUrl();
+    let id = localStorage.getItem("id");
+    let user = {};
+
+    if (id) {
+      let token = localStorage.getItem("token");
+      const CreateAxios = axios.create({
+        baseURL: " http://localhost:4000/api",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await CreateAxios.get(`/user/${id}`);
+      user = data.data;
+
+      if(user.role === 1) {
+        console.log("ok");
+      }else {
+        window.location = `http://localhost:8080/#`;
+      }
+    }
+
     return /*html*/ `
     <div class="container-fluid mt-3">
         <div class="row">

@@ -53,8 +53,6 @@ const ContactPage = {
       });
 
       document.querySelector("#submitt").addEventListener("submit", async (e) => {
-        let targetFormSignup = document.querySelector("#submitt");
-        let getDataFormSignup = new FormData(targetFormSignup);
         e.preventDefault();
 
         const body = {

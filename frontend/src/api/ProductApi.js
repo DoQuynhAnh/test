@@ -22,16 +22,16 @@ const ProductApi = {
     const url = `/products/create/${idUser}`;
     return axiosClient.post(url, body);
   },
+  put(id, body, idUser) {
+    const url = `/product/${id}/${idUser}`;
+    return axiosClient.put(url, body);
+  },
   paginate(page, limit) {
     const url = `/products?_page=${page}&_limit=${limit}`;
     return axiosClient.get(url);
   },
   getCategory(category) {
     return axiosClient.get(`products?category=${category}`);
-	},
-	put(id, body, idUser) {
-    const url = `/product/${id}/${idUser}`;
-    return axiosClient.put(url, body);
 	},
 };
 export default ProductApi;

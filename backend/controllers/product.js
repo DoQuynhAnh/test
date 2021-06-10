@@ -8,6 +8,7 @@ export const create = (req, res) => {
   form.keepExtension = true;
   form.parse(req, (err, fields, files) => {
     fields = { ...fields, isShipping: true, price: parseFloat(fields.price) };
+    console.log(req.body);
     let newProduct = new Product(fields);
     const { name, description, price, isShipping, category } = fields;
 

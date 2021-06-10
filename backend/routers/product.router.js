@@ -16,11 +16,23 @@ router.get("/product/:productID", read);
 router.get("/products", list);
 router.get("/product/photo/:productID", photo);
 
-router.delete("/product/:productID/:userId", requireSignin, isAuth, isAdmin, remove);
+router.delete(
+  "/product/:productID/:userId",
+  requireSignin,
+  isAuth,
+  isAdmin,
+  remove
+);
 
 router.post("/products/create/:userId", requireSignin, isAuth, isAdmin, create);
 
-router.put("/product/:productID/:userId", requireSignin, isAuth, isAdmin, update);
+router.put(
+  "/product/:productID/:userId",
+  requireSignin,
+  isAuth,
+  isAdmin,
+  update
+);
 
 router.param("productID", findID);
 router.param("userId", findIdUser);

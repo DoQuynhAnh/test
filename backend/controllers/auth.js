@@ -18,8 +18,9 @@ export const singup = (req, res) => {
 };
 
 export const signin = (req, res) => {
+
   const { email, password } = req.body;
-  console.log("login ", req.body);
+  console.log(req.body);
   User.findOne({ email }, (err, user) => {
     if (err || !user) {
       return res.status(400).json({
@@ -78,6 +79,7 @@ export const requireSignin = expressJwt({
 
 export const isAuth = (req, res, next) => {
   let user = req.profile && req.auth && req.profile._id == req.auth._id;
+  console.log(user);
   if (!user) {
     return res.status(400).json({
       err: "Quyền truy cập bị Từ chối",

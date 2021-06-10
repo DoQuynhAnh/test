@@ -6,6 +6,7 @@ const ProductDetail = {
   async render() {
     const { id } = parseRequestUrl();
     const { data: product } = await ProductApi.get(id);
+    let idUser = localStorage.getItem("id");
     return /*html*/ `
 	<div class="container product-detail">
 	<nav aria-label="breadcrumb">
@@ -77,8 +78,15 @@ const ProductDetail = {
 								<a href="#" class="btn btn-green">Mua Ngay</a>
 							</div>
 							<div class="col-xs-6 col-md-6 p-sm-1">
-								<a  class="btn btn-orange handleAdd" id=${product._id}>
-									<i class="fa fa-shopping-cart text-left"> </i> &nbsp;Thêm vào giỏ </a>
+
+								${
+                  idUser !== null
+                    ? `<a  class="btn btn-orange handleAdd" id=${product._id}>
+												<i class="fa fa-shopping-cart text-left"> </i> &nbsp;Thêm vào giỏ </a>`
+                    : ""
+                }
+
+								
 							</div>
 						</div>
 					</form>
@@ -95,22 +103,24 @@ const ProductDetail = {
   },
   async afterRender() {
     const btnAdd = $(".handleAdd")[0];
-    console.log(btnAdd.id);
-    btnAdd.addEventListener("click", async () => {
-      const { data: item } = await ProductApi.get(btnAdd.id);
-      let carts = localStorage.getItem("cart");
-      carts = carts === null ? [] : JSON.parse(carts);
-      let existed = await carts.map((ele) => ele.id).indexOf(item.id);
-      if (existed == -1) {
-        let product = item;
-        carts.push({ ...product, count: 1 });
-        localStorage.setItem("cart", JSON.stringify(carts));
-      } else {
-        carts[existed].count += 1;
-        localStorage.setItem("cart", JSON.stringify(carts));
-      }
-      window.location = "http://localhost:8080/#/cart";
-    });
+    if (btnAdd) {
+      console.log(btnAdd.id);
+      btnAdd.addEventListener("click", async () => {
+        const { data: item } = await ProductApi.get(btnAdd.id);
+        let carts = localStorage.getItem("cart");
+        carts = carts === null ? [] : JSON.parse(carts);
+        let existed = await carts.map((ele) => ele.id).indexOf(item.id);
+        if (existed == -1) {
+          let product = item;
+          carts.push({ ...product, count: 1 });
+          localStorage.setItem("cart", JSON.stringify(carts));
+        } else {
+          carts[existed].count += 1;
+          localStorage.setItem("cart", JSON.stringify(carts));
+        }
+        window.location = "http://localhost:8080/#/cart";
+      });
+    }
   },
 };
 
